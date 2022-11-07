@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import app.dto.StudentDto;
 import app.entity.Student;
 import app.service.StudentService;
 
@@ -24,7 +25,7 @@ public class StudentController {
 		return service.getAllStudent();
 	}
 	@GetMapping("/{id}")
-	public Student getOne(@PathVariable String id) {
+	public StudentDto getOne(@PathVariable String id) {
 		return service.getOneStudent(id);
 	}
 	@PostMapping()

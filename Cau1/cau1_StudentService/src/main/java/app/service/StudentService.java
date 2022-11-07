@@ -2,10 +2,13 @@ package app.service;
 
 import java.util.List;
 
-import app.entity.Student;
+import org.springframework.stereotype.Service;
 
+import app.dto.StudentDto;
+import app.entity.Student;
+@Service
 public interface StudentService {
-	Student getOneStudent(String id);
+	StudentDto getOneStudent(String id);
 	List<Student> getAllStudent();
 	Student addStudent(Student stu);
 	
