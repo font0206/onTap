@@ -1,0 +1,5 @@
+resilience4j.retry:
+    instances:
+        mentor:
+            maxAttempts: 5
+            waitDuration: 10s
