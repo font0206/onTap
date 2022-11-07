@@ -10,25 +10,27 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import app.entity.Student;
-import app.service.StudentService;
+import app.entity.Mentor;
+import app.service.MentorService;
 
 @RestController
-@RequestMapping("/students")
-public class StudentController {
+@RequestMapping("/mentors")
+public class MentorController {
 	@Autowired
-	private StudentService service;
+	private MentorService service;
 	
 	@GetMapping()
-	public List<Student> getAll(){
-		return service.getAllStudent();
+	public List<Mentor> getAll(){
+		return service.getAllMentor();
 	}
+	
 	@GetMapping("/{id}")
-	public Student getOne(@PathVariable String id) {
-		return service.getOneStudent(id);
+	public Mentor getOne(@PathVariable String id) {
+		return service.getOneMentor(id);
 	}
+	
 	@PostMapping()
-	public Student addStu(@RequestBody Student stu) {
-		return service.addStudent(stu);
+	public Mentor addMentor(@RequestBody Mentor men) {
+		return service.addMentor(men);
 	}
 }
